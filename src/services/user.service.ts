@@ -1,11 +1,11 @@
-import { User } from "../../db/schemas/user.schema"
 import bcrypt from 'bcrypt';
 import UserModel from "../models/User";
+import { User } from '../db/schemas/user.schema';
 
 const loginUser = async (email: string, password: string) => {
   try {
     const userResponse = await User.findOne({ email })
-    if (userResponse && userResponse.password) {
+    if (userResponse?.password) {
       const isLogin = await bcrypt.compare(password, userResponse.password)
       if (isLogin) {
         return userResponse

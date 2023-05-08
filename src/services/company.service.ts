@@ -1,4 +1,4 @@
-import { Company } from "../../db/schemas/company.schema"
+import { Company } from "../db/schemas/company.schema"
 import CompanyModel from "../models/Company"
 
 const getCompanies = async () => {

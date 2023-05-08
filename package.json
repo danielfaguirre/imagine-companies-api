@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Imagine Companies api",
   "main": "src/build/index.ts",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "tsc && node src/build/index.ts",
     "dev": "nodemon src/index.ts",
