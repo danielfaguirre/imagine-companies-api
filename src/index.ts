@@ -3,6 +3,7 @@ import cors from 'cors';
 import companyController from './controllers/company.controller';
 import userController from './controllers/user.controller';
 import { dbConnect } from './db/mongoConnection';
+import dummyController from './controllers/dummy.controller';
 require('dotenv').config();
 
 const SERVER_PORT = process.env.PORT || 8000
@@ -15,6 +16,7 @@ dbConnect()
 
 app.use('/api', companyController);
 app.use('/api', userController);
+app.use('/api', dummyController);
 
 
 app.listen(SERVER_PORT, () =>
