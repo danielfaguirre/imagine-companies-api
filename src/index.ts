@@ -3,10 +3,11 @@ import cors from 'cors';
 import companyController from './controllers/company.controller';
 import userController from './controllers/user.controller';
 import { dbConnect } from './db/mongoConnection';
+require('dotenv').config();
 
-
-const SERVER_PORT = 3001
+const SERVER_PORT = process.env.PORT || 8000
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -17,5 +18,5 @@ app.use('/api', userController);
 
 
 app.listen(SERVER_PORT, () =>
-  console.log("Imagine Companies app listening on port 3001!")
+  console.log(`Imagine Companies app listening on port ${SERVER_PORT}!`)
 );
